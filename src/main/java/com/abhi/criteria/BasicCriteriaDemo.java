@@ -13,6 +13,7 @@ import org.hibernate.Transaction;
 import java.util.Arrays;
 import java.util.List;
 
+//https://www.baeldung.com/hibernate-criteria-queries
 public class BasicCriteriaDemo {
 
     public static void main(String[] args) {
