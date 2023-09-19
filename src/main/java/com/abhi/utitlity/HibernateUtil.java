@@ -1,5 +1,6 @@
 package com.abhi.utitlity;
 
+import com.abhi.lifecyclecallbacks.LifeCycleCallBackEntity;
 import com.abhi.manytomany.Actor;
 import com.abhi.manytomany.Movie;
 import com.abhi.onetomany.Guide;
@@ -39,6 +40,7 @@ public class HibernateUtil {
         configuration.addAnnotatedClass(Passport.class);
         configuration.addAnnotatedClass(Actor.class);
         configuration.addAnnotatedClass(Movie.class);
+        configuration.addAnnotatedClass(LifeCycleCallBackEntity.class);
 
         Metadata metadata = new MetadataSources(serviceRegistry).getMetadataBuilder().build();
         return configuration.buildSessionFactory(serviceRegistry);

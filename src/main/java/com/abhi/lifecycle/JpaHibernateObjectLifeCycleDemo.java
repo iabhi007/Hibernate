@@ -7,6 +7,15 @@ import org.hibernate.SessionFactory;
 
 /**
  * https://stackoverflow.com/questions/53976845/hibernate-difference-between-update-and-merge-method
+ *
+ *
+ Hibernate update should be used where we know that we are only updating the entity information.
+ This operation adds the entity object to persistent context and further changes are tracked and
+ saved when transaction is committed.
+ Hibernate merge can be used to update existing values,
+ however this method create a copy from the passed entity object and return it.
+ The returned object is part of persistent context and tracked for any changes,
+ passed object is not tracked.
  */
 public class JpaHibernateObjectLifeCycleDemo {
 
