@@ -2,6 +2,7 @@ package com.abhi.basics;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.util.Objects;
 
@@ -12,6 +13,8 @@ import java.util.Objects;
 @Table(name = "hello_world")
 @NoArgsConstructor
 @AllArgsConstructor
+@Cacheable(value = true)
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class HelloWorld {
 
     @Id

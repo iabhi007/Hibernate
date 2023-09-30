@@ -1,11 +1,13 @@
 package com.abhi.mapsid;
 
 import com.abhi.utitlity.HibernateUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import java.time.ZonedDateTime;
 
+@Slf4j
 public class OneToOneDemo {
 
     public static void main(String[] args) {
@@ -39,7 +41,7 @@ public class OneToOneDemo {
         Customer customer1 = session.get(Customer.class, "customer__84193");
         Passport passport2 = session.get(Passport.class, customer1.getId());
 
-        System.out.println(customer1 +"   "+ passport2);
+        log.info(customer1 +"   "+ passport2);
         session.getTransaction().commit();
     }
 
